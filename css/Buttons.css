@@ -1,0 +1,171 @@
+/*BUTTONS USING JQUERY*/
+
+
+/*CIRCULAR ANIMATED BUTTON*/
+
+#circularButton.button {
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    display: inline-block;
+    width: 170px;
+}
+
+#circularButton.buttonCircle {
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    pointer-events: none;
+    animation-timing-function: ease;
+}
+
+#circularButton.buttonInner {
+    display: block;
+    background: #F8B627;
+    width: 130px;
+    text-align: center;
+    transition: 400ms;
+    padding: 20px;
+}
+
+#circularButton.buttonText {
+    position: relative;
+    color: white;
+    font-size: 25px;
+}
+
+#circularButton.explode {
+    animation: circularExplode 0.5s forwards;
+}
+
+#circularButton.desplode {
+    animation: circularDesplode 0.5s forwards;
+}
+
+@keyframes circularExplode {
+    0% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: rgba(42, 53, 80, 0.2);
+    }
+    100% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: rgba(20, 180, 87, 0.8);
+    }
+}
+
+@keyframes circularDesplode {
+    0% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: rgba(20, 180, 87, 0.8);
+    }
+    100% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: rgba(129, 80, 108, 0.6);
+    }
+}
+
+
+/* SEND ANIMATED BUTTON */
+
+.sendButton {
+    margin: auto;
+    background: #49D75C;
+    border: 0px solid #49D75C;
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    transition: all .25s ease;
+    width: 210px;
+    position: relative;
+    height: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.sendButton:not(.loading):hover {
+    box-shadow: 0px 10px 15px rgba(73, 215, 92, .4);
+}
+
+.sendButton:not(.loading):hover img {
+    transform: translateY(-7px)
+}
+
+.sendButton img {
+    width: 45px;
+    height: 45px;
+    rotate: 90deg;
+    transition: all .25s ease;
+    z-index: 1;
+}
+
+span.sendLoadingAnimateBackground {
+    width: 60px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    animation: loading infinite .8s ease .05s;
+    rotate: -90deg;
+    z-index: 0;
+}
+
+span.sendLoadingAnimate {
+    display: block;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #49D75C;
+}
+
+.sendButton:not(.loading) span,
+.sendButton.loading i {
+    opacity: 0;
+}
+
+.sendButton.loading {
+    width: 60px;
+}
+
+.sendButton.loading img {
+    transform: rotate(-90deg);
+    padding-bottom: 4px;
+    padding-left: 3px;
+}
+
+.sendButton.loading span.sendLoadingAnimate,
+.sendButton.loading span.SendLoadingAnimateBackground {
+    opacity: 1;
+}
+
+.sendButton.loading span.sendLoadingAnimateBackground {
+    left: 0px;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

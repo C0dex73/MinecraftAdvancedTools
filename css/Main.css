@@ -1,0 +1,150 @@
+/*BASICS*/
+
+body {
+    background-image: url("../Medias/backgrounds/mainBackground.png");
+    background-color: black;
+    background-size: 100%;
+    overflow: hidden;
+}
+
+body>div {
+    float: left;
+    height: 470px;
+    width: 23%;
+    padding: 0 10px;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+h1:not(#mainTitle) {
+    font-family: cursive;
+}
+
+h1#mainTitle {
+    font-family: impact;
+    text-align: center;
+}
+
+p:not(#warning,
+#EA) {
+    position: relative;
+    text-align: center;
+    margin-left: 75px;
+    margin-right: 75px;
+    font-family: monospace;
+}
+
+p#warning {
+    margin: 10px 10px;
+}
+
+img:not(#sendButtonIcon,
+#banner) {
+    margin: 20px auto;
+    width: 50%;
+    max-height: auto;
+}
+
+iframe#bubbleVideo {
+    margin-top: 50px;
+}
+
+a#contact {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+a:not(#EA) {
+    text-decoration: none;
+    color: white;
+}
+
+table {
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+
+/*SPECIALS*/
+
+.presentation {
+    display: block;
+}
+
+.warning_div {
+    background-color: rgba(255, 0, 0, 0.5);
+    margin: auto;
+    height: 25px;
+    width: 400px;
+    text-align: center;
+}
+
+.aditionnal_content {
+    width: 575px;
+    text-align: center;
+    float: right;
+}
+
+.bye {
+    animation: bye .25s;
+}
+
+.hello {
+    animation: hello .25s;
+}
+
+@keyframes bye {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes hello {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.notes {
+    border: solid black 2px;
+    height: 125px;
+    margin-top: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+
+/*BUBBLES SHEMATIC*/
+
+.bubble {
+    background-color: white;
+    border-radius: 15px;
+    width: 850px;
+    height: 550px;
+    text-align: center;
+}
+
+.bubbles {
+    height: 750px;
+    width: 900px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-color: transparent transparent;
+}
